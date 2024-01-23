@@ -1,0 +1,213 @@
+#projects {
+    text-align: center;
+    padding-top: 3rem;
+    height: auto;
+}
+
+#projects h3 {
+    font-family: 'Crimson Text', serif;
+}
+
+.projects__container {
+    display: grid;
+    place-items: center;
+}
+
+.featured__project-item {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.featured__project-header {
+    color: var(--color-primary);
+    text-align: left;
+    padding: 10px;
+    transition: all 0.4s ease-in-out;
+}
+
+.featured__project-header h3 {
+    transition: all 0.2s ease-in-out;
+    font-size: 1.8rem;
+}
+
+.featured__project-header h3:hover {
+    color: var(--color-primary);
+}
+
+.featured__project-details {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    place-items: center;
+}
+
+.featured__project-content {
+    padding: 15px 20px 15px 30px;
+    text-align: justify;
+    height: max-content;
+    background: var(--light-navy);
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.featured__project-footer {
+    display: flex;
+    font-weight: 400;
+    font-size: 0.9rem;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+.featured__project-footer span {
+    margin-right: 25px;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+}
+
+.featured__project-footer span:hover {
+    color: var(--white);
+    transform: translateY(-4px);
+    
+}
+
+.featured__project-img img {
+    border-radius: 1rem;
+    transition: all 0.4s ease-in-out;
+}
+
+.featured__project-img img:hover {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.9);
+    transform: translateY(-6px);
+}
+
+/* =========== Other Projects ================*/
+
+.other__projects {
+    padding-top: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    width: 90%;
+}
+
+.project__item {
+    background: var(--light-navy);
+    padding: 1.8rem 1.5rem 1.5rem 2rem;
+    text-align: justify;
+    border-radius: 0.5rem;
+    transition: all 0.4s ease-in-out;
+}
+
+.project__item h3 {
+    font-size: 1.7rem;
+}
+
+.project__item:hover {
+    transform: translateY(-0.6rem);
+}
+
+.project-header {
+    text-align: left;
+}
+
+.project__item:hover .project-header {
+    color: var(--color-primary);
+}
+
+.project-content {
+    padding: 10px 10px 10px 20px;
+    font-size: 0.95rem;
+}
+
+.project-footer {
+    display: flex;
+    font-weight: 400;
+    font-size: 0.9rem;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+.project-footer span {
+    display: inline-block;
+    text-align: center;
+    margin-right: 25px;
+    transition: all 0.2s ease-in-out;
+}
+
+.project__item:hover span {
+    color: var(--white);
+}
+
+/* =============== MEDIA QUERIES (MEDIUM DEVICES like Tablets) ============== */
+@media screen and (max-width: 1024px) {
+    #projects {
+      height: auto;
+    }
+
+    .featured__project {
+        display: grid;
+        place-items: center;
+    }
+
+    .featured__project-item {
+        width: 90%;
+    }
+
+    .featured__project-details {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        gap: 10px;
+        padding-top: 10px;
+    }
+
+    .featured__project-content {
+        grid-row: 2;
+        border-radius: 1rem;
+    }
+
+    .featured__project-img {
+        grid-row: 1;
+    }
+
+    .other__projects {
+        width: 100%;
+        grid-template-columns: auto;
+
+    }
+}
+
+/* =============== MEDIA QUERIES (MEDIUM DEVICES like Tablets) ============== */
+@media screen and (max-width: 600px) {
+    #projects {
+      height: auto;
+    }
+
+    .featured__project-item {
+        width: 100%;
+    }
+
+    .featured__project-content {
+        font-size: 0.9rem;
+        padding: 15px 15px 15px 20px;
+    }
+
+    .featured__project-footer {
+        font-size: 0.85rem;
+        justify-items: center;
+    }
+
+    .project__item {
+        padding: 1.5rem 1rem 1.5rem 1rem;
+    }
+
+    .project-content {
+        font-size: 0.9rem;
+        padding: 10px 0px 10px 5px;
+    }
+
+    .project-footer {
+        font-size: 0.85rem;
+    }
+}

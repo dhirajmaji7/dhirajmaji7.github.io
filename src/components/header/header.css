@@ -1,0 +1,113 @@
+header {
+    height: 100vh;
+    padding-top: 6rem;
+    overflow: hidden;
+}
+
+.header__container {
+    text-align: center;
+    height: 100%;
+    position: relative;
+}
+
+.header__container h1 {
+    color: var(--white);
+    font-size: 4.5rem;
+}
+
+.header__container h2 {
+    color: var(--slate);
+    font-size: 2.25rem;
+}
+
+.header__container h4 {
+    color: var(--color-primary);
+}
+
+/* ===================== ME ================== */
+.me {
+    background: url(../../assets/my_photo_2.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: 65% 70%;
+    content:"";
+    width: 22rem;
+    height: 30rem;
+    position: absolute;
+    left: calc(50% - 11rem);
+    margin-top: 4rem;
+    border-radius: 12rem 12rem 0 0;
+    padding: 0rem 0rem 0rem 0rem;
+}
+
+/* ============= Header Socials ============== */
+.header__socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    position: absolute;
+    left: 0;
+    bottom: 0rem;
+    transition: 0.1s ease-in-out;
+}
+
+.header__socials a:hover {
+    transform: scale(1.2);
+}
+
+.header__socials::after {
+    content: "";
+    width: 1px;
+    height: 5rem;
+    background: var(--color-primary);
+}
+
+/* ============= Header Email ============== */
+.header__email {
+    font-family: 'Crimson Text', serif;
+    position: absolute;
+    right: -5rem;
+    bottom: 6rem;
+    transform: rotate(90deg);
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+/* =============== MEDIA QUERIES (MEDIUM DEVICES like Tablets) ============== */
+@media screen and (max-width: 1024px) {
+    header {
+        height: 70vh;
+    }
+}
+
+/*=============== MEDIA QUERIES (LARGE SCREENS BUT WINDOWED) ====================*/
+@media screen and (max-width: 1024px) and (max-height: 980px) {
+    header {
+        height: 100vh;
+    }
+}
+
+
+/* =============== MEDIA QUERIES (SMALL DEVICES like Phones) ============== */
+@media screen and (max-width: 600px) {
+    header {
+        height: 100vh;
+    }
+
+    .header__socials, 
+    .header__email {
+        display: none;
+    }
+
+    .header__container h1 {
+        color: var(--white);
+        font-size: 3.2rem;
+    }
+    
+    .header__container h2 {
+        color: var(--slate);
+        font-size: 1.8rem;
+    }
+}
+
