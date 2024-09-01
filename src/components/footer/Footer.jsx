@@ -1,6 +1,6 @@
 import React from 'react'
 import './footer.css'
-import CV from '../../assets/CV.pdf'
+import Resume from '../../assets/Resume.pdf'
 import {FaFacebookF} from 'react-icons/fa'
 import {GrInstagram} from 'react-icons/gr'
 import {FaLinkedinIn} from 'react-icons/fa'
@@ -21,7 +21,7 @@ const Footer = () => {
       </ul>
 
       <div className="footer__CV">
-        <a href={CV} download>Download CV</a>
+        <a href={Resume} download>Download CV</a>
       </div>
 
       <div className="footer__socials">

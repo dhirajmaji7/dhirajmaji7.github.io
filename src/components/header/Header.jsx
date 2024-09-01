@@ -9,8 +9,8 @@ const Header = () => {
     const [isDeleting, setIsDeleting] = useState(false);
     const toRotate = [ "Robotics Engineer", "Perception Engineer"];
     const [text, setText] = useState('');
-    const [delta, setDelta] = useState(300 - Math.random() * 100);
-    const period = 2000;
+    const [delta, setDelta] = useState(200 - Math.random() * 100);
+    const period = 1000;
     const space = " ";
 
     const tick = () => {
@@ -30,7 +30,7 @@ const Header = () => {
         } else if (isDeleting && updatedText === '') {
             setIsDeleting(false);
             setLoopNum(loopNum + 1);
-            setDelta(300);
+            setDelta(100);
         }
     }
 
