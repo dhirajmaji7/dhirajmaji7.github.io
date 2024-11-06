@@ -32,7 +32,7 @@ const About = () => {
                 <h5>Education</h5>
                 <p><small>M.Sc. in Robotics</small></p>
                 <p><small>University of Michigan</small></p>
-                <p><small>Focus : Deep Learning</small></p>
+                <p><small>Focus : CV, Deep Learning</small></p>
               </article>
               <article className='about__card'>
                 <GiArchiveResearch className='about__icon' />

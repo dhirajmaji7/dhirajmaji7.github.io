@@ -5,9 +5,8 @@
 
 .experience__container {
   display: grid;
-  height: max-content;
   transform: translateY(-20px);
-  grid-template-rows: 1fr 1.2fr;
+  grid-template-rows: auto 1fr;
   gap: 1rem;
   justify-items: center;
 }
@@ -44,7 +43,7 @@
   overflow: hidden;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  margin: 1rem;
+  margin: 1rem auto;
 }
 
 .experience__card-logo:hover {
