@@ -13,25 +13,27 @@ const Projects = () => {
           <article className='featured__project-item'>
             <div className="featured__project-header">
               <h4>Featured Project</h4>
-              <h3>Attention Res-Unet with Guided Decoder</h3>
             </div>
             <div className="featured__project-details">
               <div className="featured__project-content">
+                <div className="featured__project-header">
+                  <h3>Attention Res-Unet with Guided Decoder</h3>
+                </div>
                 <ul className='project__content-points'>
                   <li>Designed a novel Guided Decoder technique to explicitly supervise the learning process of each decoder layer.</li>
                   <li>Devised an end-to-end Deep Learning architecture combining Res-UNet and Attention gates along with the Guided Decoder technique showing significant increase in performance based on statistical analysis done with 0.05 p-value.</li>
                   <li>Designed a weighted guided loss which improves prediction capabilities of each layer of the decoder.</li>
                   <li>Published in the Biomedical Signal Processing and Control journal in 2022.</li>
                 </ul>
+                <div className="featured__project-footer">
+                  <span>Deep Learning</span>
+                  <span>Biomedical Imaging</span>
+                  <span>Semantic Segmentation</span>
+                </div>
               </div>
               <div className="featured__project-img">
                 <img src={ARUGD_img} alt='ARU-GD Image' />
               </div>
-            </div>
-            <div className="featured__project-footer">
-              <span>Deep Learning</span>
-              <span>Biomedical Imaging</span>
-              <span>Semantic Segmentation</span>
             </div>
           </article>
         </div>

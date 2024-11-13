@@ -8,6 +8,7 @@ footer {
 
 footer a {
     color: var(--color-bg);
+    transition: all 0.3s ease-in-out;
 }
 
 .footer__logo {
@@ -27,6 +28,14 @@ footer a {
     justify-content: center;
     gap: 2rem;
     margin: 0 auto 3rem;
+}
+
+.footer__links li {
+    transition: all 0.4s ease-in-out;
+}
+
+.footer__links li:hover {
+    transform: translateY(-4px);
 }
 
 .footer__CV {
