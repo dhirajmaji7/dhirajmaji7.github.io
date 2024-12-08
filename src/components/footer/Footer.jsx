@@ -1,10 +1,9 @@
 import React from 'react'
 import './footer.css'
 import Resume from '../../assets/Resume.pdf'
-import {FaFacebookF} from 'react-icons/fa'
-import {GrInstagram} from 'react-icons/gr'
 import {FaLinkedinIn} from 'react-icons/fa'
 import {FiGithub} from 'react-icons/fi'
+import { SiGooglescholar } from "react-icons/si";
 
 
 const Footer = () => {
@@ -25,9 +24,8 @@ const Footer = () => {
       </div>
 
       <div className="footer__socials">
-        <a href='https://www.facebook.com/dhirajmaji7/' target='__blank'><FaFacebookF/></a>
-        <a href='https://www.instagram.com/dhirajmaji7/' target='__blank'><GrInstagram/></a>
         <a href='https://www.linkedin.com/in/dhirajmaji7/' target='__blank'><FaLinkedinIn/></a>
+        <a href='https://scholar.google.com/citations?user=mw1AFqwAAAAJ&hl=en' target='__blank'><SiGooglescholar/></a>
         <a href='https://github.com/dhirajmaji7' target='__blank'><FiGithub/></a>
       </div>
 

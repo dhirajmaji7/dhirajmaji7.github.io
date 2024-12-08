@@ -7,11 +7,10 @@ const Header = () => {
 
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
-    const toRotate = [ "Robotics Engineer", "Perception Engineer"];
+    const toRotate = [ "Robotics Perception Engineer"];
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(200 - Math.random() * 100);
     const period = 1000;
-    const space = " ";
 
     const tick = () => {
         let i = loopNum % toRotate.length;

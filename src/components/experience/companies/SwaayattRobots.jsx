@@ -4,7 +4,7 @@ const SwaayattRobots = () => {
 return (
     <div className="experience__details">
         <div className="experience__details-header">
-            <h3>Research Intern - Path Planning</h3>
+            <h3>Robotics Intern</h3>
             <span className="experience__details-company">
                 Swaayatt Robots
             </span>

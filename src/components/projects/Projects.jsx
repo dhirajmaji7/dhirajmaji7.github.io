@@ -1,6 +1,7 @@
 import React from 'react'
 import './projects.css'
 import ARUGD_img from '../../assets/arugd.jpg'
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
   return (
@@ -17,7 +18,10 @@ const Projects = () => {
             <div className="featured__project-details">
               <div className="featured__project-content">
                 <div className="featured__project-header">
-                  <h3>Attention Res-Unet with Guided Decoder</h3>
+                  <a href='https://www.sciencedirect.com/science/article/abs/pii/S1746809421006741?via%3Dihub' target='__blank'>
+                    <span className='featured__project-header-title'>Attention Res-Unet with Guided Decoder</span>
+                    <span className='icon'><FaExternalLinkAlt/></span>
+                  </a>
                 </div>
                 <ul className='project__content-points'>
                   <li>Designed a novel Guided Decoder technique to explicitly supervise the learning process of each decoder layer.</li>
@@ -32,7 +36,7 @@ const Projects = () => {
                 </div>
               </div>
               <div className="featured__project-img">
-                <img src={ARUGD_img} alt='ARU-GD Image' />
+                <img src={ARUGD_img} alt='ARU-GD' />
               </div>
             </div>
           </article>

@@ -1,8 +1,5 @@
 {
-    "build": {
-            "dockerfile": "Dockerfile.dev-container",
-            "context": ".."
-        },
+    "image": "react-website:v1.0",
     "name": "react_ws",
     "workspaceMount": "source=${localWorkspaceFolder},destination=/root/react_ws,type=bind",
     "workspaceFolder": "/root/react_ws",
