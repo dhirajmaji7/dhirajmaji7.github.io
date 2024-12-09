@@ -20,7 +20,7 @@ return (
                     and 3D reconstruction.
                 </li>
                 <li> 
-                    Designed a camera calibration algorithm with Trust Region optimization that gives 18 - 23% less error in meter space 
+                    Designed a <b>camera calibration</b> algorithm with Trust Region optimization that gives 18 - 23% less error in meter space 
                     as compared to OpenCV. 
                 </li>
                 <li>

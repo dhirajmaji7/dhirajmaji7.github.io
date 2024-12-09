@@ -24,7 +24,7 @@ return (
                     accurate 3D bounding boxes, enhancing object localization for autonomous systems by leveraging sensor fusion techniques.
                 </li>
                 <li> 
-                    Developed a <b>Pallet Detection</b> pipeline using YOLOv8 in PyTorch, achieving a MAP of 0.91, by training on a curated dataset of
+                    Developed an end-to-end <b>Pallet Detection</b> pipeline using YOLOv8 in PyTorch, achieving a MAP of 0.91, by training on a curated dataset of
                     real-world and synthetic data, enhancing object detection accuracy for auto pick and place operations. 
                 </li>
                 <li>
@@ -32,7 +32,7 @@ return (
                     measurement of freights, and enhancing navigation and path planning by auto updation of vehicle footprint with freight.
                 </li>
                 <li>
-                    Contributed to the design of an <b>Autonomous Barcode Detection</b> pipeline with oriented bounding boxes using YOLOv8, achieving a
+                    Contributed to the design of an end-to-end <b>Autonomous Barcode Detection</b> pipeline with oriented bounding boxes using YOLOv8, achieving a
                     MAP of 0.89, reducing freight misplacement and enhancing inventory tracking.
                 </li>
                 <li>
