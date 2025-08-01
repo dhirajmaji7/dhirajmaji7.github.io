@@ -1,18 +1,17 @@
 {
-    "image": "react-website:v1.0",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
     "name": "react_ws",
     "workspaceMount": "source=${localWorkspaceFolder},destination=/root/react_ws,type=bind",
     "workspaceFolder": "/root/react_ws",
     "privileged": true,
     "mounts": [
-        // "source=${localEnv:HOME}/bags,destination=/root/bags,type=bind", // For reading stored bags
         "source=/tmp/.X11-unix,destination=/tmp/.X11-unix,type=bind", // for GUI apps
-        // "source=${localEnv:HOME}/.Xauthority,destination=/root/.Xauthority,type=bind", // for GUI apps
+        "source=${localEnv:HOME}/.Xauthority,destination=/root/.Xauthority,type=bind", // for GUI apps
         "source=/dev,destination=/dev,type=bind", // for USB
         "source=/etc/localtime,destination=/etc/localtime,type=bind,readonly"
-    ],
-    "forwardPorts": [
-        3000
     ],
     "securityOpt": [
         "seccomp=unconfined"
@@ -23,8 +22,6 @@
     "containerEnv": {
         "DISPLAY": "${localEnv:DISPLAY}",
         "QT_X11_NO_MITSHM": "1",
-        // "NVIDIA_VISIBLE_DEVICES": "all",  
-        // "NVIDIA_DRIVER_CAPABILITIES": "all",
         "TERM": "xterm-256color"
     },
     "remoteEnv": {
@@ -33,17 +30,10 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-vscode.cpptools",
-                "ms-vscode.cpptools-extension-pack",
-                "ms-vscode.cpptools-themes",
-                "jeff-hykin.better-cpp-syntax",
                 "mhutchie.git-graph",
                 "eamodio.gitlens",
-                "ms-iot.vscode-ros",
                 "redhat.vscode-xml",
                 "redhat.vscode-yaml",
-                "twxs.cmake",
-                "cschlosser.doxdocgen",
                 "ms-azuretools.vscode-docker"
             ],
             "settings": {
@@ -54,11 +44,9 @@
         }
     },
     "runArgs": [
-        // "--network=host",
+        "--network=host",
         "--name=react-container",
         "--rm"
-        // "--gpus=all", // GPUs can be specified to the Docker CLI using either the --gpus option starting with Docker 19.03 or using the environment variable NVIDIA_VISIBLE_DEVICES
-        // "--runtime=nvidia",
         // "--entrypoint=/ros_entrypoint.sh"
     ]
     // "postCreateCommand": "./.devcontainer/post_create_commands.sh"

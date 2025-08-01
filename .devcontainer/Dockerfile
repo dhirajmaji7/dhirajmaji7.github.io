@@ -6,6 +6,8 @@ COPY package.json package-lock.json /app/
 
 RUN npm install
 
+RUN apk add --no-cache git
+
 EXPOSE 3000
 
 # CMD ["npm", "start"]
