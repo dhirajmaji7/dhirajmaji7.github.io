@@ -25,22 +25,20 @@ export const preLoaderAnim = () => {
       duration: 1.5,
       delay: 0.1,
       opacity: 0,
-      y: -120,
-      ease: "Power3.easeOut",
+      y: -200,
+      ease: "bounce.out",
     })
     .from(".preloader__text span", {
       duration: 1.5,
       opacity: 0,
-      y: 120,
-      skewY: 10,
-      stagger: 0.4,
-      ease: "Power3.easeOut",
+      y: -200,
+      stagger: 0.3,
+      ease: "bounce.out",
     })
     .to(".preloader__text span", {
       duration: 1,
       delay: 0.2,
       y: 120,
-      skewY: -20,
       stagger: 0.2,
       opacity: 0,
       ease: "Power3.easeOut",
