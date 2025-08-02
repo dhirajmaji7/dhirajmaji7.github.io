@@ -2,14 +2,15 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import './header.css'
 import HeaderSocials from './HeaderSocials'
+import logo from '../../assets/DM_logo_2.png'
 
 const Header = () => {
 
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
-    const toRotate = [ "Robotics Perception Engineer"];
+    const toRotate = ["Robotics Perception Engineer"];
     const [text, setText] = useState('');
-    const [delta, setDelta] = useState(200 - Math.random() * 100);
+    const [delta, setDelta] = useState(100);
     const period = 1000;
 
     const tick = () => {
@@ -20,7 +21,7 @@ const Header = () => {
         setText(updatedText);
 
         if (isDeleting) {
-            setDelta(prevDelta => prevDelta / 2)
+            setDelta(prevDelta => prevDelta / 1.5)
         }
 
         if (!isDeleting && updatedText === fullText) {
@@ -42,17 +43,36 @@ const Header = () => {
 
 
   return (
-    <header>
+    <header id='home'>
+      <div className="logo">
+        <a href="#home">
+          <img src={logo} alt="Logo" />
+        </a>
+      </div>
       <div className="container header__container">
-        <h4>Hi, my name is</h4>
-        <h1>Dhiraj Maji</h1>
-        <h2>
-            <span>| {text} |</span>
-        </h2>
-        <HeaderSocials/>
-        <div className="me"></div>
-        <div className='header__email'>
-            <a href='#contact'>dhirajmaji7@gmail.com</a>
+        <div className="header__intro">
+          <div className="header__name">
+            <h1>Dhiraj Maji</h1>
+          </div>
+          <div className="header__role">
+            <h2>
+                <span>| {text} |</span>
+            </h2>
+          </div>
+          <div className='header__description'>
+            <h4>
+              Building Intelligent systems that see, understand, and interact with the world 
+              through advanced Computer Vision and Deep Learning.
+            </h4>
+          </div>
+          
+          {/* <HeaderSocials/> */}
+          {/* <div className='header__email'>
+            <a href='#contact'>Contact Me</a>
+          </div> */}
+        </div>
+        <div className="me">
+          <img src={require('../../assets/my_photo_2.jpg')} alt="My Photo" />
         </div>
       </div>
     </header>

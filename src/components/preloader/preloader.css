@@ -1,9 +1,9 @@
 .preloader {
     height: 100vh;
     width: 100%;
-    background-image: linear-gradient(135deg, var(--dark-navy), var(--navy), var(--dark-slate), var(--navy)), url(../../assets/bg-texture.png);
+    background: linear-gradient(135deg, var(--black), var(--dark-grey), var(--black));
     background-size: 400% 400%, cover;
-    animation: gradientMove 15s ease infinite;
+    animation: gradientMove 5s ease infinite;
     color: var(--white);
     position: fixed;
     top: 0;
@@ -56,6 +56,7 @@
     font-size: 7vh;
     overflow: hidden;
     color: var(--white);
+    padding-top: 10rem;
 }
 
 .preloader__text span {

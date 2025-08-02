@@ -14,6 +14,11 @@
 }
 
 :root {
+  --black: #000;
+  --dark-grey: #111;
+  --grey: #333;
+  --light-grey: #555;
+
   --color-bg: #1f1f38;
   --color-bg-variant: #2c2c6c;
   --color-primary: #4db5ff;
@@ -50,12 +55,33 @@ html {
 }
 
 body {
-  /* font-family: 'Crimson Text', serif; */
   font-family: 'Montserrat', sans-serif;
-  background: var(--navy);
+  background: var(--black);
   color: var(--slate);
   line-height: 1.7;
-  background-image: url(../src/assets/bg-texture.png);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: repeating-linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.05) 0px,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px,
+    transparent 250px
+  );
+
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 100%);
+
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* =============== GENERAL STYLE ================= */

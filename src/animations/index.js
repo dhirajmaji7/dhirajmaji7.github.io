@@ -22,14 +22,14 @@ export const preLoaderAnim = () => {
       ease: "Power3.easeOut",
     })
     .from(".preloader__img img", {
-      duration: 1.5,
-      delay: 0.1,
+      duration: 1.0,
+      delay: 0.0,
       opacity: 0,
       y: -200,
       ease: "bounce.out",
     })
     .from(".preloader__text span", {
-      duration: 1.5,
+      duration: 1.2,
       opacity: 0,
       y: -200,
       stagger: 0.3,
@@ -44,15 +44,15 @@ export const preLoaderAnim = () => {
       ease: "Power3.easeOut",
     })
     .to(".preloader__img img", {
-      duration: 0.5,
-      y: 120,
+      duration: 0.2,
+      y: -120,
       opacity: 0,
       ease: "Power3.easeOut",
     })
     .to(
       ".preloader",
       {
-        duration: 1,
+        duration: 0.8,
         height: "0vh",
         ease: "Power3.easeOut",
         onComplete: () => {
