@@ -1,6 +1,5 @@
 import React from 'react'
 import './about.css'
-import CallToAction from './CallToAction'
 import ME from '../../assets/my_photo_3.png'
 import {FaAward} from 'react-icons/fa'
 import {PiStudentFill} from 'react-icons/pi'
@@ -55,7 +54,6 @@ const About = () => {
             can transform industries and drive impactful solutions. Let's connect and push the boundaries of 
             technology together!
             </p>
-            <CallToAction/>
         </div>
       </div>
     </section>

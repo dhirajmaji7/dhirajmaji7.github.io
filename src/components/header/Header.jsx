@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import './header.css'
-import HeaderSocials from './HeaderSocials'
 import logo from '../../assets/DM_logo_2.png'
+import CallToAction from './CallToAction'
 
 const Header = () => {
 
@@ -65,11 +65,7 @@ const Header = () => {
               through advanced Computer Vision and Deep Learning.
             </h4>
           </div>
-          
-          {/* <HeaderSocials/> */}
-          {/* <div className='header__email'>
-            <a href='#contact'>Contact Me</a>
-          </div> */}
+          <CallToAction/>
         </div>
         <div className="me-container">
           <div className="ring ring-top"></div>
