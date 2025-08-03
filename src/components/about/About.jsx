@@ -21,38 +21,38 @@ const About = () => {
             <div className="about__cards">
               <article className='about__card'>
                 <FaAward className='about__icon' />
-                <h5>Experience</h5>
-                <p><small>Robotics Software Engineer</small></p>
-                <p><small>Full time : 1 - 2 Years</small></p>
-                <p><small>Internships : ~ 1 Year</small></p>
+                <h5 className='card__title'>Experience</h5>
+                <p><small>Robotics Perception Engineer</small></p>
+                <p><small>Full time : 2 - 3 Years</small></p>
               </article>
               <article className='about__card'>
                 <PiStudentFill className='about__icon' />
-                <h5>Education</h5>
-                <p><small>M.Sc. in Robotics</small></p>
+                <h5 className='card__title'>Education</h5>
+                <p><small>Masters in Robotics</small></p>
                 <p><small>University of Michigan</small></p>
-                <p><small>Focus : CV, Deep Learning</small></p>
               </article>
               <article className='about__card'>
                 <GiArchiveResearch className='about__icon' />
-                <h5>Publications</h5>
-                <p><small>1 Journal Paper</small></p>
+                <h5 className='card__title'>Publications</h5>
                 <p><small>Field : Deep Learning</small></p>
-                <p><small>Citations : 150+</small></p>
+                <p><small>Citations : 220+</small></p>
               </article>
             </div>
 
             <p className='about__paragraph'>
             Hello! My name is <span>Dhiraj</span>, and I'm a Robotics Software Engineer specializing in 
             Perception, driven by a passion for Computer Vision and Deep Learning. My academic journey 
-            led me to a Master's in Robotics from the University of Michigan with a focus in Deep Learning. 
-            Currently, I lead the development of advanced perception algorithms for autonomous forklifts at 
-            ArcBest Technologies, where I work on development of object detection pipelines, perception 
-            system optimization, system parallelization using CUDA, and simulation environments. My work in Deep Learning 
-            have been recognized with a publication in Biomedical Signal Processing and Control journal, 
-            adding to the growing body of knowledge in the field. I am excited to explore how AI and Robotics 
-            can transform industries and drive impactful solutions. Let's connect and push the boundaries of 
-            technology together!
+            led me to a Master's in Robotics from the University of Michigan, Ann Arbor. 
+            I currently lead the development of advanced perception algorithms for autonomous forklifts at <span>ArcBest Technologies</span>. 
+            My work spans real-time object detection, CUDA-based system parallelization, perception systems
+            optimization, and simulation development — all tailored to solving real-world challenges in 
+            warehouse automation. 
+            </p>
+            <p className='about__paragraph'>
+            With over 2 years of experience in Robotics and AI, I specialize in developing perception systems 
+            that enable robots to navigate complex environments, recognize objects, and make intelligent 
+            decisions in real-time. My expertise spans autonomous vehicles, industrial automation, and robotics, 
+            with a focus on robust vision algorithms that are both efficient and reliable in challenging operational conditions.
             </p>
         </div>
       </div>

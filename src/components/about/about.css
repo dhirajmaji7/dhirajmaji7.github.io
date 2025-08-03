@@ -1,21 +1,26 @@
 #about {
-    padding-top: 3rem;
+    padding-top: 6rem;
+    height: 100vh;
+    overflow: auto;
 }
 
 .about__container {
     display: grid;
     grid-template-columns: 35% 50%;
     gap: 15%;
-    transform: translateY(-1rem);
+    padding: 4rem;
+    align-items: center;
+    width: 80%;
+    height: 70%;
+    border-radius: 2rem;
+    background: rgba(10, 10, 10, 0.4);
+    box-shadow: -4px 4px 10px 2px rgba(55, 55, 55, 0.5), 4px 4px 10px 2px rgba(55, 55, 55, 0.5);
 }
 
 .about__me {
     width: 100%;
     aspect-ratio: 1/1;
     border-radius: 2rem;
-    background: linear-gradient(
-        45deg, transparent, var(--slate), transparent
-    );
     display: grid;
     place-items: center;
 }
@@ -23,23 +28,24 @@
 .about__me-image {
     border-radius: 2rem;
     overflow: hidden;
-    transform: rotate(10deg);
+    transform: rotate(0deg);
     transition: all 0.4s ease-in-out;
 }
 
 .about__me-image:hover {
-    transform: rotate(0);
+    transform: rotate(10deg);
 }
 
 .about__cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    padding-bottom: 2rem;
 }
 
 .about__card {
-    background: var(--color-bg-variant);
-    border: 1px solid transparent;
+    background: var(--dark-navy);
+    border: 2px solid var(--navy);
     border-radius: 1rem;
     padding: 1.1rem 1rem;
     text-align: center;
@@ -58,23 +64,43 @@
     font-size: 1.5rem;
     margin-bottom: 0.25rem;
 }
-
-.about__card h5 {
+.card__title {
     font-family: 'Crimson Text', serif;
     color: var(--color-primary);
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    width: fit-content;
+    margin: 0 auto 0.5rem auto;
+    display: block;
+    text-align: center;
+    position: relative;
+}
+
+.card__title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 0%;
+    background-color: var(--color-primary);
+    transition: width 0.4s ease;
+}
+
+.about__card:hover  .card__title::after {
+  width: 100%;
 }
 
 .about__card small {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: var(--color-light);
+    /* font-family: 'Crimson Text', serif; */
 }
 
 .about__paragraph {
-    margin: 1.5rem 0 1.5rem;
     color: var(--slate);
     text-align: justify;
     font-size: 0.95rem;
+    padding-top: 2.5rem;
 }
 
 .about__paragraph span {
