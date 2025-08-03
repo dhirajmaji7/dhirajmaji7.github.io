@@ -71,8 +71,12 @@ const Header = () => {
             <a href='#contact'>Contact Me</a>
           </div> */}
         </div>
-        <div className="me">
-          <img src={require('../../assets/my_photo_2.jpg')} alt="My Photo" />
+        <div className="me-container">
+          <div className="ring ring-top"></div>
+          <div className="ring ring-bottom"></div>
+          <div className="me">
+            <img src={require('../../assets/my_photo_2.jpg')} alt="My Photo" />
+          </div>
         </div>
       </div>
     </header>
