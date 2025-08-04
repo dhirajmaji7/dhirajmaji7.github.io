@@ -6,7 +6,7 @@ COPY package.json package-lock.json /app/
 
 RUN npm install
 
-RUN apk add --no-cache git
+RUN apk add --no-cache git openssh
 
 EXPOSE 3000
 
