@@ -1,6 +1,6 @@
 header {
-    height: 100vh;
-    overflow: auto;
+    width: 100vw;
+    padding-top: 6rem;
 }
 
 .header__container {
@@ -45,8 +45,9 @@ header {
 
 #home .logo{
     position: fixed;
-    top: 4rem;
-    left: 4rem;
+    top: 0;
+    left: 0;
+    margin: 2rem;
     z-index: 10;
     height: 7rem;
     width: 7rem;

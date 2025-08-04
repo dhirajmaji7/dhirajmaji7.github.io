@@ -1,7 +1,9 @@
 #about {
+    width: 100vw;
     padding-top: 6rem;
-    height: 100vh;
-    overflow: auto;
+    height: auto;
+    position: relative;
+    overflow: visible;
 }
 
 .about__container {
@@ -11,7 +13,8 @@
     padding: 4rem;
     align-items: center;
     width: 80%;
-    height: 70%;
+    height: fit-content;
+    overflow: scroll;
     border-radius: 2rem;
     background: rgba(10, 10, 10, 0.4);
     box-shadow: -4px 4px 10px 2px rgba(55, 55, 55, 0.5), 4px 4px 10px 2px rgba(55, 55, 55, 0.5);
