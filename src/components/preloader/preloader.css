@@ -30,8 +30,7 @@
 
 .preloader__container {
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: max-content max-content;
+    grid-template-rows: 1fr auto;
     place-items: center;
     justify-content: center;
     align-items: center;
@@ -44,7 +43,7 @@
     position: absolute;
     top: 25%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-10%);
 }
 
 .preloader__text {
@@ -56,7 +55,7 @@
     font-size: 7vh;
     overflow: hidden;
     color: blanchedalmond;
-    padding-top: 10rem;
+    transform: translateY(25%);
 }
 
 .preloader__text span {
