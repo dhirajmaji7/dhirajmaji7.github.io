@@ -9,14 +9,12 @@ const CallToAction = () => {
     <div className='action__buttons'>
       <div className='cta'>
         <a href={Resume} download>Download CV</a>
+        <a href='#contact'>Let's Connect</a>
       </div>
       <div className="header__socials">
         <a href='https://www.linkedin.com/in/dhirajmaji7/' target='__blank'><FaLinkedinIn/></a>
         <a href='https://scholar.google.com/citations?user=mw1AFqwAAAAJ&hl=en' target='__blank'><SiGooglescholar/></a>
         <a href='https://github.com/dhirajmaji7' target='__blank'><FiGithub/></a>
-      </div>
-      <div className='cta'>
-        <a href='#contact'>Let's Connect</a>
       </div>
     </div>
   )
