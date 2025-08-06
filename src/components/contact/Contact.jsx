@@ -57,8 +57,8 @@ const Contact = () => {
       <div className="container contact__container">
         <div className="contact__text">
           <p>
-            My inbox is always open for everyone. Whether you have a question or just want to 
-            say hi, I’ll try my best to get back to you!
+            My inbox is always open for everyone. Whether you want to reach out or just want to 
+            say Hi, shoot me a message and I’ll try my best to get back to you !
           </p>
         </div>
         <form ref={formRef} onSubmit={handleSubmit} name='google-sheet'>
