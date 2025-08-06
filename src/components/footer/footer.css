@@ -3,7 +3,7 @@ footer {
     padding: 3rem 0;
     text-align: center;
     font-size: 0.9rem;
-    margin-top: 7rem;
+    margin-top: 10rem;
 }
 
 footer a {
@@ -15,7 +15,7 @@ footer a {
     font-family: 'Crimson Text', serif;
     font-size: 2.4rem;
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     display: inline-block;
 }
 
@@ -27,11 +27,12 @@ footer a {
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
-    margin: 0 auto 3rem;
+    margin: 0 auto 1rem;
 }
 
 .footer__links li {
     transition: all 0.4s ease-in-out;
+    list-style-type: none;
 }
 
 .footer__links li:hover {
@@ -66,7 +67,7 @@ footer a {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 6rem;
 }
 
 .footer__socials a {
@@ -84,14 +85,6 @@ footer a {
     background: transparent;
     color: var(--color-bg);
     border-color: var(--color-bg);
-}
-
-.footer__copyright {
-    font-family: 'Crimson Text', serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 6rem;
-    color: var(--color-bg);
 }
 
 /* =============== MEDIA QUERIES (SMALL DEVICES like Phones) ============== */

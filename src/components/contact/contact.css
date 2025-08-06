@@ -1,5 +1,5 @@
 #contact {
-    /* min-height: auto; */
+    min-height: auto;
     height: auto;
 }
 
@@ -50,6 +50,7 @@ input, textarea {
     position: relative;
     background-color: transparent;
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .form__button button::before {

@@ -28,10 +28,6 @@ const Footer = () => {
         <a href='https://scholar.google.com/citations?user=mw1AFqwAAAAJ&hl=en' target='__blank'><SiGooglescholar/></a>
         <a href='https://github.com/dhirajmaji7' target='__blank'><FiGithub/></a>
       </div>
-
-      <div className="footer__copyright">
-        <small>Copyright &copy; 2023 Dhiraj Maji. All rights reserved.</small>
-      </div>
     </footer>
   )
 }
