@@ -15,9 +15,11 @@ const ExperienceCard = ({ company }) => {
 
   return (
     <div className="experience-card">
-      <div className="experience-column logo-column">
-        <img src={logoSrc} alt={`${company.companyName} logo`} className="company-logo" />
-      </div>
+      <a href={company.link} target="_blank"
+        rel="noopener noreferrer" className="experience-column logo-column" >
+        <img src={logoSrc} alt={`${company.companyName} logo`}
+          className="company-logo" />
+      </a>
       <div className="experience-column meta-column">
         <div className="experience-meta">
           <h3 className='job-title'>{company.role}</h3>

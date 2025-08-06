@@ -4,6 +4,7 @@ const experienceData = [
     role: "Robotics Engineer, Perception II",
     period: "Jun 2023 - Present",
     logoKey: "arcbest",
+    link: "https://arcb.com/technology/vaux",
     description: [
       `Led the migration of the perception team’s pointcloud processing pipeline from <b class="highlight">CPU to GPU using CUDA programming</b> on Nvidia Orin, boosting output frequency by 54% from 13 Hz to 20 Hz and reducing CPU utilization by 15%.`,
       `Designed a multimodal <b class="highlight">3D Object Detection</b> pipeline integrating 2D detections from a DETR model and LiDAR data to generate accurate 3D bounding boxes, enhancing object localization for autonomous systems by leveraging sensor fusion techniques.`,
@@ -17,6 +18,7 @@ const experienceData = [
     role: "Advanced Robotics Intern",
     period: "May 2022 - Aug 2022",
     logoKey: "amazon_robotics",
+    link: "https://www.aboutamazon.com/news/operations/amazon-robotics-headquarters-tour-westborough-massachusetts",
     description: [
       `Research and Development of joint calibration techniques for single & multi-camera system, using 2D forward projection and 3D reconstruction.`,
       `Designed a <b class="highlight">camera calibration</b> algorithm with Trust Region optimization that gives 18 - 23% less error in meter space as compared to OpenCV.`,
@@ -28,6 +30,7 @@ const experienceData = [
     role: "Robotics Intern",
     period: "Apr 2021 - Jun 2021",
     logoKey: "swaayatt_robots",
+    link: "https://www.swaayattrobots.com/",
     description: [
       `Developed a software pipeline to convert visual inputs from cameras in Carla Simulator to Birds-eye view & Occupancy grids, improving data representation.`,
       `Designed a <b class="highlight">real-time path planning</b> system for autonomous vehicles using the RRT* algorithm as Local planner and the A* algorithm as the Global planner for enhanced route optimization.`,
