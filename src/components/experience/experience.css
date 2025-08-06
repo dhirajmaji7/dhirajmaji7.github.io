@@ -1,142 +1,146 @@
 #experience {
   text-align: center;
-  padding-top: 3rem;
+  height: auto;
 }
 
 .experience__container {
-  display: grid;
-  transform: translateY(-20px);
-  grid-template-rows: auto 1fr;
-  gap: 1rem;
-  justify-items: center;
-}
-
-.experience__cards {
-  width: 85%;
-  height: max-content;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  padding: 20px 20px;
-  transition: all 0.4s ease-in-out;
-}
-
-.experience__card {
-  width: 80%;
-  padding: 1rem;
-}
-
-.experience__card-active {
-  width: 80%;
-  padding: 1rem;
-  cursor: default;
-  z-index: 1;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
-  border-radius: 2rem;
-  transform: translateY(-8px);
-}
-
-.experience__card-logo {
-  width: 60%;
-  aspect-ratio: 1;
-  border-radius: 2rem;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  margin: 1rem auto;
-}
-
-.experience__card-logo:hover {
-  transform: translateY(-8px);
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.9);
-}
-
-.experience__card-title {
-  margin: 1rem;
-  color: var(--color-primary);
-  font-size: 1.2rem;
-}
-
-.experience__card-active .experience__card-title {
-  color: blanchedalmond;
-}
-
-.experience__details {
   display: flex;
   flex-direction: column;
-  justify-items: center;
-  width: 95%;
-  height: auto;
-  padding: 0 10px;
+  gap: 2rem;
+  width: 75%;
+  padding: 3rem;
 }
 
-.experience__details h3 {
-  font-family: 'Crimson Text', serif;
-  font-weight: 500;
-  color: blanchedalmond;
-  font-size: 1.8rem;
+.experience-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr 4fr;
+  gap: 2rem;
+  padding: 2rem;
+  background: transparent;
+  border-radius: 2rem;
+  box-shadow: 0 4px 20px rgba(150, 150, 150, 0.4);
+  background: rgba(20, 20, 20, 0.7);
+  color: var(--slate);
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
 }
 
-.experience__details-company {
+.experience-card:hover {
+  background: var(--dark-navy);
+  transform: translateY(-8px);
+}
+
+.experience-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-logo {
+  width: 60%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  border-radius: 2rem;
+  padding: 1rem;
+  border: 2px solid var(--slate);
+  transition: all 0.3s ease-in-out;
+}
+
+.experience-card:hover .company-logo {
+  padding: 0.5rem;
+}
+
+.meta-column .experience-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  /* align-items: center; */
+  padding: 2rem;
+}
+
+.job-title {
   font-size: 1.2rem;
+  margin-bottom: 0.5rem;
   color: var(--color-primary);
+  position: relative;
 }
 
-.experience__details-separator {
-  font-size: 1.4rem;
+.job-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.4s ease;
+}
+
+.experience-card:hover .job-title::after {
+  width: 100%;
+}
+
+.experience-meta h4 {
+  margin: 0;
   font-weight: 500;
+  font-size: 1.1rem;
   color: blanchedalmond;
 }
 
-.experience__details-period {
-  font-size: 1.2rem;
-  color: var(--color-primary);
+.period {
+  font-style: italic;
+  color: var(--slate);
+  font-size: 1rem;
 }
 
-.experience__details-description {
-  padding-top: 1rem;
+.description-column ul {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.description-column li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
   text-align: justify;
 }
 
-/* =============== MEDIA QUERIES (MEDIUM DEVICES like Tablets) ============== */
-@media screen and (max-width: 1024px) {
-  #experience {
-    height: auto;
-  }
-  
-  .experience__container {
-    grid-template-rows: 1.6fr 1fr;
-  }
-  
-  .experience__cards {
-    width: 80%;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-  }
-
-  .experience__details-section {
-    width: 100%;
-  }
+.highlight {
+  font-weight: normal;
+  color: var(--color-primary);
 }
 
-
 /* =============== MEDIA QUERIES (SMALL DEVICES like Phones) ============== */
-@media screen and (max-width: 600px) {
-  .experience__container {
-    grid-template-rows: 1fr max-content;
+
+@media (max-width: 768px) {
+  .experience-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
   }
 
-  .experience__cards {
-    width: 100%;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-  }
-
-  .experience__details-section {
+  .experience-left,
+  .experience-right {
     width: 100%;
   }
 
-  .experience__details-description {
-    font-size: 0.9rem;
+  .experience-left {
+    margin-bottom: 1rem;
+  }
+
+  .experience-right ul {
+    padding-left: 0;
+  }
+
+  .experience-right li {
+    text-align: left;
   }
 }

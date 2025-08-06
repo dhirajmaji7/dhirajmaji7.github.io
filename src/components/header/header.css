@@ -45,6 +45,7 @@ header {
 
 .header__description h4 {
     color: var(--slate);
+    font-size: 1rem;
 }
 
 #home .logo{

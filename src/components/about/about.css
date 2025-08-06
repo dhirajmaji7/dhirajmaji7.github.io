@@ -16,7 +16,7 @@
     height: fit-content;
     overflow: scroll;
     border-radius: 2rem;
-    background: rgba(10, 10, 10, 0.4);
+    background: rgba(20, 20, 20, 0.7);
     box-shadow: -4px 4px 10px 2px rgba(55, 55, 55, 0.5), 4px 4px 10px 2px rgba(55, 55, 55, 0.5);
 }
 
@@ -101,7 +101,7 @@
 .about__paragraph {
     color: var(--slate);
     text-align: justify;
-    font-size: 0.95rem;
+    font-size: 1rem;
     padding-top: 2.5rem;
 }
 
