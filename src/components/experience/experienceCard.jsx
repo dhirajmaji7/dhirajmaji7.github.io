@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import './experience.css';
 import logo_arcbest from '../../assets/logo_arcbest.png';
 import logo_amazon_robotics from '../../assets/logo_amazon_robotics.png';
@@ -12,9 +12,30 @@ const logoMap = {
 
 const ExperienceCard = ({ company }) => {
   const logoSrc = logoMap[company.logoKey];
+  const cardRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    },
+    { threshold: 0.4 }
+  );
+
+  if (cardRef.current) observer.observe(cardRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="experience-card">
+    <div
+      ref={cardRef}
+      className={`experience-card ${isVisible ? 'in-view' : ''}`}
+    >
       <a href={company.link} target="_blank"
         rel="noopener noreferrer" className="experience-column logo-column" >
         <img src={logoSrc} alt={`${company.companyName} logo`}
