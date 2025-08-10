@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react';
 import './about.css'
 import ME from '../../assets/my_photo_3.png'
 import {FaAward} from 'react-icons/fa'
@@ -6,6 +6,44 @@ import {PiStudentFill} from 'react-icons/pi'
 import {GiArchiveResearch} from 'react-icons/gi'
 
 const About = () => {
+  const imgRef = useRef(null);
+
+  useEffect(() => {
+    const node = imgRef.current;
+    if (!node) return;
+
+    const maxTilt = 15; // degrees
+    const handleMove = (e) => {
+      const rect = node.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      const rotateX = (0.5 - y) * maxTilt;
+      const rotateY = (x - 0.5) * maxTilt;
+      node.style.setProperty('--rx', `${rotateX}deg`);
+      node.style.setProperty('--ry', `${rotateY}deg`);
+    };
+
+    const handleEnter = () => {
+      node.style.setProperty("--tiltScale", "1.005");
+    };
+
+    const handleLeave = () => {
+      node.style.setProperty('--rx', '0deg');
+      node.style.setProperty('--ry', '0deg');
+      node.style.setProperty("--tiltScale", "1");
+    };
+
+    node.addEventListener('pointermove', handleMove);
+    node.addEventListener("pointerenter", handleEnter);
+    node.addEventListener('pointerleave', handleLeave);
+
+    return () => {
+      node.removeEventListener('pointermove', handleMove);
+      node.removeEventListener("pointerenter", handleEnter);
+      node.removeEventListener('pointerleave', handleLeave);
+    };
+  }, []);
+  
   return (
     <section id='about'>
       <h4>Get To Know</h4>
@@ -13,7 +51,7 @@ const About = () => {
 
       <div className="container about__container">
         <div className="about__me">
-            <div className="about__me-image">
+            <div className="about__me-image" ref={imgRef}>
               <img src={ME} alt='About' />
             </div>
         </div>
