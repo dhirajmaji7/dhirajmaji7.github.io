@@ -1,5 +1,5 @@
 import React from 'react';
-import experienceData from './experienceData';
+import ExperienceData from './experienceData';
 import ExperienceCard from './experienceCard';
 
 const Experience = () => {
@@ -8,7 +8,7 @@ const Experience = () => {
       <h4>My Journey</h4>
       <h2>Experience</h2>
       <div className="container experience__container">
-        {experienceData.map((company, index) => (
+        {ExperienceData.map((company, index) => (
           <ExperienceCard key={index} company={company} />
         ))}
       </div>

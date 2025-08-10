@@ -1,4 +1,4 @@
-const experienceData = [
+const ExperienceData = [
   {
     companyName: "ArcBest Technologies",
     role: "Robotics Engineer, Perception II",
@@ -39,4 +39,4 @@ const experienceData = [
   }
 ];
 
-export default experienceData;
+export default ExperienceData;

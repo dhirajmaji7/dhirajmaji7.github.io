@@ -42,10 +42,6 @@ nav a:hover .icon {
     transform: translateY(-20px);
 }
 
-/* nav a.active .icon {
-    transform: translateY(-35px);
-} */
-
 nav a .text {
     position: absolute;
     font-weight: 300;
@@ -60,47 +56,6 @@ nav a:hover .text {
     opacity: 1;
     transform: translateY(10px);
 }
-
-/* nav a.active .text {
-    opacity: 1;
-    transform: translateY(10px);
-} */
-
-/* nav a.active {
-    color: var(--white);
-} */
-
-/* nav .indicator {
-    position: absolute;
-    background: rgba(0, 0, 0, 0.9);
-    top: -35%;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    border: 6px solid var(--navy);
-    transition: 0.5s;
-}
-
-
-nav a:nth-child(1).active ~ .indicator {
-    transform: translateX(calc(80px * 0));
-}
-
-nav a:nth-child(2).active ~ .indicator {
-    transform: translateX(calc(80px * 1 + 2px));
-}
-
-nav a:nth-child(3).active ~ .indicator {
-    transform: translateX(calc(80px * 2 + 5px));
-}
-
-nav a:nth-child(4).active ~ .indicator {
-    transform: translateX(calc(80px * 3 + 8px));
-}
-
-nav a:nth-child(5).active ~ .indicator {
-    transform: translateX(calc(80px * 4 + 12px));
-} */
 
 /* =============== MEDIA QUERIES (SMALL DEVICES like Phones) ============== */
 @media screen and (max-width: 600px) {

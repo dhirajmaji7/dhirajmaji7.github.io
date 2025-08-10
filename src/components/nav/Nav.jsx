@@ -3,6 +3,8 @@ import './nav.css'
 import {AiOutlineHome, AiOutlineUser} from 'react-icons/ai'
 import {BiBook, BiMessageDetail} from 'react-icons/bi'
 import {MdWorkOutline} from 'react-icons/md'
+import { PiBookOpenText } from "react-icons/pi";
+import { GoGear } from "react-icons/go";
 import { useState } from 'react'
 
 const Nav = () => {
@@ -20,6 +22,11 @@ const Nav = () => {
           <span className='icon'><AiOutlineUser/></span>
           <span className='text'>About</span>
       </a>
+      <a href='#education' onClick={() => setActiveNav('#education')} 
+          className={activeNav === '#education' ? 'active' : ''}>
+          <span className='icon'><PiBookOpenText/></span>
+          <span className='text'>Education</span>
+      </a>
       <a href='#experience' onClick={() => setActiveNav('#experience')}
           className={activeNav === '#experience' ? 'active' : ''}>
           <span className='icon'><MdWorkOutline/></span>
@@ -27,7 +34,7 @@ const Nav = () => {
       </a>
       <a href='#projects' onClick={() => setActiveNav('#projects')}
           className={activeNav === '#projects' ? 'active' : ''}>
-          <span className='icon'><BiBook/></span>
+          <span className='icon'><GoGear/></span>
           <span className='text'>Projects</span>
       </a>
       <a href='#contact' onClick={() => setActiveNav('#contact')}

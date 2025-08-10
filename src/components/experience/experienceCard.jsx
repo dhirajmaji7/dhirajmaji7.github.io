@@ -11,25 +11,26 @@ const logoMap = {
 };
 
 const ExperienceCard = ({ company }) => {
-  const logoSrc = logoMap[company.logoKey];
   const cardRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    },
-    { threshold: 0.4 }
-  );
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      },
+      { threshold: 0.4 }
+    );
 
-  if (cardRef.current) observer.observe(cardRef.current);
-    return () => observer.disconnect();
+    if (cardRef.current) observer.observe(cardRef.current);
+      return () => observer.disconnect();
   }, []);
+
+  const logoSrc = logoMap[company.logoKey];
 
   return (
     <div
