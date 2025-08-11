@@ -12,15 +12,22 @@ const Projects = () => {
       <div className="container projects__container">
         <div className="featured__project">
           <article className='featured__project-item'>
-            <div className="featured__project-header">
+            <div className="featured__project-group">
               <h4>Featured Project</h4>
             </div>
-            <div className="featured__project-details">
+            <div className="featured__project-card">
+              <div className="featured__project-img">
+                <img src={ARUGD_img} alt='ARU-GD' />
+              </div>
               <div className="featured__project-content">
                 <div className="featured__project-header">
                   <a href='https://www.sciencedirect.com/science/article/abs/pii/S1746809421006741?via%3Dihub' target='__blank'>
-                    <span className='featured__project-header-title'>Attention Res-Unet with Guided Decoder</span>
-                    <span className='icon'><FaExternalLinkAlt/></span>
+                    <span className='featured__project-header-title'>
+                      Attention Res-Unet with Guided Decoder
+                    </span>
+                    <span className='icon'>
+                      <FaExternalLinkAlt/>
+                    </span>
                   </a>
                 </div>
                 <ul className='project__content-points'>
@@ -31,12 +38,9 @@ const Projects = () => {
                 </ul>
                 <div className="featured__project-footer">
                   <span>Deep Learning</span>
-                  <span>Biomedical Imaging</span>
                   <span>Semantic Segmentation</span>
+                  <span>Biomedical Imaging</span>
                 </div>
-              </div>
-              <div className="featured__project-img">
-                <img src={ARUGD_img} alt='ARU-GD' />
               </div>
             </div>
           </article>
