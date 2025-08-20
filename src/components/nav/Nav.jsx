@@ -1,8 +1,8 @@
 import React from 'react'
 import './nav.css'
-import {AiOutlineHome, AiOutlineUser} from 'react-icons/ai'
-import {BiBook, BiMessageDetail} from 'react-icons/bi'
-import {MdWorkOutline} from 'react-icons/md'
+import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai'
+import { BiMessageDetail } from 'react-icons/bi'
+import { MdWorkOutline } from 'react-icons/md'
 import { PiBookOpenText } from "react-icons/pi";
 import { GoGear } from "react-icons/go";
 import { useState } from 'react'
