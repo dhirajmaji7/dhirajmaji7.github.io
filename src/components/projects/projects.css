@@ -64,7 +64,7 @@
 }
 
 .featured__project-content {
-    padding: 15px 25px 15px 25px;
+    padding: 15px 25px;
     text-align: justify;
     height: auto;
     font-size: 0.95rem;
@@ -221,7 +221,7 @@
     }
 }
 
-/* =============== MEDIA QUERIES (MEDIUM DEVICES like Tablets) ============== */
+/* =============== MEDIA QUERIES (SMALL DEVICES like Phones) ============== */
 @media screen and (max-width: 600px) {
     #projects {
       height: auto;

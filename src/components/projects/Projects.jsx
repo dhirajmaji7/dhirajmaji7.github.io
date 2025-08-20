@@ -1,7 +1,96 @@
-import React from 'react'
-import './projects.css'
-import ARUGD_img from '../../assets/arugd.jpg'
+import React, { useEffect, useRef, useState } from 'react';
+import './projects.css';
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { featuredProjects, otherProjects } from './projectsData';
+
+function useInView(threshold = 0.2) {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    const io = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold }
+    );
+    io.observe(node);
+    return () => io.disconnect();
+  }, [threshold]);
+
+  return [ref, inView];
+}
+
+function FeaturedProjectCard({ fp, index = 0 }) {
+  const [featRef, featInView] = useInView(0.15);
+  const orientation = (fp.orientation || 'left').toLowerCase();
+
+  const Img = (
+    <div className="featured__project-img">
+      {fp.image && <img src={fp.image} alt={fp.title} />}
+    </div>
+  );
+
+  const Content = (
+    <div className="featured__project-content">
+      <div className="featured__project-header">
+        {fp.link ? (
+          <a href={fp.link} target='__blank' rel="noreferrer">
+            <span className='featured__project-header-title'>{fp.title}</span>
+            <span className='icon'><FaExternalLinkAlt/></span>
+          </a>
+        ) : (
+          <span className='featured__project-header-title'>{fp.title}</span>
+        )}
+      </div>
+
+      {fp.bullets && (
+        <ul className='project__content-points'>
+          {fp.bullets.map((b, i) => (<li key={i}>{b}</li>))}
+        </ul>
+      )}
+
+      {fp.tags && (
+        <div className="featured__project-footer">
+          {fp.tags.map((t, i) => (<span key={i}>{t}</span>))}
+        </div>
+      )}
+    </div>
+  );
+
+  return (
+    <div
+      ref={featRef}
+      className={`featured__project-card reveal ${featInView ? 'in-view' : ''} ${orientation === 'right' ? 'orientation-right' : 'orientation-left'}`}
+      style={{ '--stagger': `${index * 120}ms` }}
+    >
+      {orientation === 'right' ? (<>{Content}{Img}</>) : (<>{Img}{Content}</>)}
+    </div>
+  );
+}
+
+function OtherProjectItem({ p, index = 0 }) {
+  const [ref, inView] = useInView(0.2);
+  return (
+    <article
+      ref={ref}
+      className={`project__item reveal ${inView ? 'in-view' : ''}`}
+      style={{ '--stagger': `${(index + 1) * 100}ms` }}
+    >
+      <h3 className='project-header'>{p.title}</h3>
+      {p.bullets && (
+        <ul className='project-content'>
+          {p.bullets.map((b, i) => <li key={i}>{b}</li>)}
+        </ul>
+      )}
+      {p.tags && (
+        <div className="project-footer">
+          {p.tags.map((t, i) => <span key={i}>{t}</span>)}
+        </div>
+      )}
+    </article>
+  );
+}
 
 const Projects = () => {
   return (
@@ -13,119 +102,23 @@ const Projects = () => {
         <div className="featured__project">
           <article className='featured__project-item'>
             <div className="featured__project-group">
-              <h4>Featured Project</h4>
+              <h4>Featured Project{featuredProjects.length > 1 ? 's' : ''}</h4>
             </div>
-            <div className="featured__project-card">
-              <div className="featured__project-img">
-                <img src={ARUGD_img} alt='ARU-GD' />
-              </div>
-              <div className="featured__project-content">
-                <div className="featured__project-header">
-                  <a href='https://www.sciencedirect.com/science/article/abs/pii/S1746809421006741?via%3Dihub' target='__blank'>
-                    <span className='featured__project-header-title'>
-                      Attention Res-Unet with Guided Decoder
-                    </span>
-                    <span className='icon'>
-                      <FaExternalLinkAlt/>
-                    </span>
-                  </a>
-                </div>
-                <ul className='project__content-points'>
-                  <li>Designed a novel Guided Decoder technique to explicitly supervise the learning process of each decoder layer.</li>
-                  <li>Devised an end-to-end Deep Learning architecture combining Res-UNet and Attention gates along with the Guided Decoder technique showing significant increase in performance based on statistical analysis done with 0.05 p-value.</li>
-                  <li>Designed a weighted guided loss which improves prediction capabilities of each layer of the decoder.</li>
-                  <li>Published in the Biomedical Signal Processing and Control journal in 2022.</li>
-                </ul>
-                <div className="featured__project-footer">
-                  <span>Deep Learning</span>
-                  <span>Semantic Segmentation</span>
-                  <span>Biomedical Imaging</span>
-                </div>
-              </div>
-            </div>
+
+            {featuredProjects.map((fp, fidx) => (
+              <FeaturedProjectCard key={fp.id || fp.title} fp={fp} index={fidx} />
+            ))}
           </article>
         </div>
 
         <div className="other__projects">
-          <article className='project__item'>
-            <h3 className='project-header'>Super Resolution GANs</h3>
-            <ul className='project-content'>
-              <li>Implemented a Generative Adversarial Network (GAN) to convert low resolution images to high resolution on Set5 and DIV-2k dataset.</li>
-              <li>Devised a custom loss with MSE, Adversarial loss and Perceptual loss to obtain better PSNR of 23.84 as compared to bicubic interpolation.</li>
-            </ul>
-            <div className="project-footer">
-              <span>Deep Learning</span>
-              <span>Generative Models</span>
-            </div>
-          </article>
-
-          <article className='project__item'>
-            <h3 className='project-header'>Autonomous Navigation of Mobile robots</h3>
-            <ul className='project-content'>
-              <li>Developed a Simultaneous Localization and Mapping (SLAM) algorithm for Mobile robot to create a map of its environment and localize its position using particle filters.</li>
-              <li>Implemented the A* algorithm for path planning and designed an algorithm for autonomous exploration of an unknown environment.</li>
-            </ul>
-            <div className="project-footer">
-              <span>SLAM</span>
-              <span>Path Planning</span>
-            </div>
-          </article>
-
-          <article className='project__item'>
-            <h3 className='project-header'>Meta-Learning Conservation Laws for End-to-End Molecular Dynamics Simulation</h3>
-            <ul className='project-content'>
-              <li>Developed a Deep Learning architecture for prediction of position and velocity of the next state for 10,000 particles in a system using the dual-loop Meta-Learning-based approach.</li>
-              <li>Designed the inner loop with unsupervised loss function to encode conservation laws of physics as inductive bias and a supervised outer loop to predict the next states of the particles.</li>
-              <li>Achieved 85x speed boost compared to traditional MD simulations</li>
-            </ul>
-            <div className="project-footer">
-              <span>Meta-Learning</span>
-              <span>Deep Learning</span>
-            </div>
-          </article>
-
-          <article className='project__item'>
-            <h3 className='project-header'>Autonomous Robotic Manipulator</h3>
-            <ul className='project-content'>
-              <li>Designed an algorithm to detect the position, orientation, and color of multiple blocks of varied dimensions in the workspace using RGB-D cameras.</li>
-              <li>Achieved a color detection accuracy of 98%, and a position and orientation accuracy of around 90% in a well lit environment.</li>
-              <li>Developed a kinematics model for a 5R manipulator for autonomous navigation in the workspace and performing pick and place, and stacking operations.</li>
-            </ul>
-            <div className="project-footer">
-              <span>Computer Vision</span>
-              <span>Robot Kinematics</span>
-            </div>
-          </article>
-
-          <article className='project__item'>
-            <h3 className='project-header'>Event Camera based Stereo Depth Estimation</h3>
-            <ul className='project-content'>
-              <li>Developed an algorithm for stereo depth estimation from Event cameras which have higher dynamic range, high frame rate, and lower latency as compared to conventional cameras.</li>
-              <li>Designed a pipeline to back-project events from different viewpoints as 3D rays through a voxel grid.</li>
-              <li>Implemented a ray-density based thresholding through each voxel to create a local depth map for each viewpoint, and the depth maps from multiple viewpoints are merged to create the final point cloud.</li>
-            </ul>
-            <div className="project-footer">
-              <span>Computer Vision</span>
-              <span>Depth Estimation</span>
-            </div>
-          </article>
-
-          <article className='project__item'>
-            <h3 className='project-header'>Vehicle Detection on Kitti dataset</h3>
-            <ul className='project-content'>
-              <li>Implemented Deep Learning models of Res-Net, Dense-Net and VGG-Net using PyTorch framework on the Kitti dataset for vehicle detection.</li>
-              <li>Compared the performance of our modified Res-Net against other architectures on the image classification task.</li>
-            </ul>
-            <div className="project-footer">
-              <span>Deep Learning</span>
-              <span>Object Detection</span>
-            </div>
-          </article>
-
+          {otherProjects.map((p, idx) => (
+            <OtherProjectItem key={p.id || p.title} p={p} index={idx} />
+          ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Projects
+export default Projects;
