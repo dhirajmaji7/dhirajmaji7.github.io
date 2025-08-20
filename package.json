@@ -1,6 +1,5 @@
 {
   "name": "dmaji-portfolio-website",
-  "homepage": "http://dhirajmaji.com",
   "version": "1.0",
   "private": true,
   "dependencies": {
