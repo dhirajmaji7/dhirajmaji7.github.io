@@ -1,45 +1,45 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import './header.css'
 import logo from '../../assets/DM_logo_2.png'
 import CallToAction from './CallToAction'
 
 const Header = () => {
 
-    const [loopNum, setLoopNum] = useState(0);
-    const [isDeleting, setIsDeleting] = useState(false);
-    const toRotate = ["Robotics Perception Engineer"];
-    const [text, setText] = useState('');
-    const [delta, setDelta] = useState(100);
-    const period = 1000;
+  const [loopNum, setLoopNum] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [text, setText] = useState('');
+  const [delta, setDelta] = useState(100);
+  const period = 1000;
 
-    const tick = () => {
-        let i = loopNum % toRotate.length;
-        let fullText = toRotate[i];
-        let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
+  const tick = useCallback(() => {
+    const toRotate = ['Robotics Perception Engineer'];
+    const i = loopNum % toRotate.length;
+    const fullText = toRotate[i];
+    const updatedText = isDeleting
+      ? fullText.substring(0, text.length - 1)
+      : fullText.substring(0, text.length + 1);
 
-        setText(updatedText);
+    setText(updatedText);
 
-        if (isDeleting) {
-            setDelta(prevDelta => prevDelta / 1.5)
-        }
-
-        if (!isDeleting && updatedText === fullText) {
-            setIsDeleting(true);
-            setDelta(period);
-        } else if (isDeleting && updatedText === '') {
-            setIsDeleting(false);
-            setLoopNum(loopNum + 1);
-            setDelta(100);
-        }
+    if (isDeleting) {
+      setDelta((prev) => prev / 1.5);
     }
 
-    useEffect(() => {
-      let ticker = setInterval(() => {
-          tick();
-      }, delta)
-      return () => { clearInterval(ticker)};
-    }, [text])
+    if (!isDeleting && updatedText === fullText) {
+      setIsDeleting(true);
+      setDelta(period);
+    } else if (isDeleting && updatedText === '') {
+      setIsDeleting(false);
+      setLoopNum((n) => n + 1);
+      setDelta(100);
+    }
+  }, [isDeleting, loopNum, text, period]);
+
+  useEffect(() => {
+    const t = setTimeout(tick, delta);
+    return () => clearTimeout(t);
+  }, [tick, delta]);
 
 
   return (
@@ -71,7 +71,7 @@ const Header = () => {
           <div className="ring ring-top"></div>
           <div className="ring ring-bottom"></div>
           <div className="me">
-            <img src={require('../../assets/my_photo_2.jpg')} alt="My Photo" />
+            <img src={require('../../assets/my_photo_2.jpg')} alt="Portrait" />
           </div>
         </div>
       </div>
